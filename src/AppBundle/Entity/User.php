@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use STK\MultitenacyBundle\Security\User\MultitenacyUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class User implements MultitenacyUserInterface
 {

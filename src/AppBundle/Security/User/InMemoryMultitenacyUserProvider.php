@@ -19,6 +19,7 @@ class InMemoryMultitenacyUserProvider implements MultitenacyUserProviderInterfac
      * This method must throw UsernameNotFoundException if the user is not
      * found.
      *
+     * @param string $tenant The tenant
      * @param string $username The username
      *
      * @return MultitenacyUserInterface
@@ -26,7 +27,7 @@ class InMemoryMultitenacyUserProvider implements MultitenacyUserProviderInterfac
      * @throws TenantNotFoundException if the tenant is not found
      * @throws UsernameNotFoundException if the user is not found
      */
-    public function loadUserByTenantAndUsername($username)
+    public function loadUserByTenantAndUsername($tenant, $username)
     {
         return new User();
     }
