@@ -19,7 +19,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../STKMultitenacyBundle",
+            "url": "../STKMultitenancyAuthBundle",
             "options": {
                 "symlink": true
             }
