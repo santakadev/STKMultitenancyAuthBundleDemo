@@ -12,7 +12,16 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class InMemoryMultitenacyUserProvider implements MultitenacyUserProviderInterface
 {
-
+    private $tenants = [
+        ['1', 'tenant1'],
+        ['2', 'tenant2'],
+    ];
+    
+    private $users = [
+        ['1', '1', 'user1', '12345'],
+        ['2', '1', 'user2', '54321'], 
+    ];
+    
     /**
      * Loads the user for the given username.
      *
@@ -29,7 +38,27 @@ class InMemoryMultitenacyUserProvider implements MultitenacyUserProviderInterfac
      */
     public function loadUserByTenantAndUsername($tenant, $username)
     {
-        return new User();
+        $foundTenant = array_filter($this->tenants, function($currentTenant) use ($tenant) {
+            return $currentTenant[1] === $tenant;
+        });
+        
+        if (count($foundTenant) === 0) {
+            throw new TenantNotFoundException();
+        }
+        $foundTenant = current($foundTenant);
+
+        $foundUser = array_filter($this->users, function($currentUser) use ($foundTenant, $username) {
+            return $currentUser[1] === $foundTenant[0] and $currentUser[2] === $username;
+        });
+
+
+        if (count($foundUser) === 0) {
+            throw new UsernameNotFoundException();
+        }
+
+        $user = current($foundUser);
+
+        return new User($user[0], $foundTenant[1], $user[2], $user[3]);
     }
 
     /**
