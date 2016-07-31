@@ -19,7 +19,7 @@ class InMemoryMultitenacyUserProvider implements MultitenacyUserProviderInterfac
     
     private $users = [
         ['1', '1', 'user1', '12345'],
-        ['2', '1', 'user2', '54321'], 
+        ['2', '2', 'user2', '54321'],
     ];
     
     /**
