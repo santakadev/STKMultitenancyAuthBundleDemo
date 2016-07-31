@@ -1,3 +1,3 @@
 services:
-    app.in_memory_multitenacy_user_provider:
-        class: AppBundle\Security\User\InMemoryMultitenacyUserProvider
+    app.in_memory_multitenancy_user_provider:
+        class: AppBundle\Security\User\InMemoryMultitenancyUserProvider

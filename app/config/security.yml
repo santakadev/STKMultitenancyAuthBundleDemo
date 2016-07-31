@@ -6,8 +6,8 @@ security:
         AppBundle\Entity\User: plaintext
 
     providers:
-        multitenacy_user:
-            id: app.in_memory_multitenacy_user_provider
+        multitenancy_user:
+            id: app.in_memory_multitenancy_user_provider
 
     firewalls:
         dev:
@@ -16,13 +16,13 @@ security:
 
         test:
             pattern: ^/
-            multitenacy:
+            multitenancy:
                 login_path: login
                 check_path: login
             logout:
                 path:   /logout
                 target: /test
-            provider: multitenacy_user
+            provider: multitenancy_user
             anonymous: ~
 
         main:

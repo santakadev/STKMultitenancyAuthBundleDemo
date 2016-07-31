@@ -2,10 +2,10 @@
 
 namespace AppBundle\Entity;
 
-use STK\MultitenacyBundle\Security\User\MultitenacyUserInterface;
+use STK\MultitenancyAuthBundle\Security\User\MultitenancyUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class User implements MultitenacyUserInterface
+class User implements MultitenancyUserInterface
 {
     /**
      * @var string

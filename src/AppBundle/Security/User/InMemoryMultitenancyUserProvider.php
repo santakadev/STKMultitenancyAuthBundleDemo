@@ -3,14 +3,14 @@
 namespace AppBundle\Security\User;
 
 use AppBundle\Entity\User;
-use STK\MultitenacyBundle\Security\Exception\Security\User\TenantNotFoundException;
-use STK\MultitenacyBundle\Security\User\MultitenacyUserInterface;
-use STK\MultitenacyBundle\Security\User\MultitenacyUserProviderInterface;
+use STK\MultitenancyAuthBundle\Security\Exception\Security\User\TenantNotFoundException;
+use STK\MultitenancyAuthBundle\Security\User\MultitenancyUserInterface;
+use STK\MultitenancyAuthBundle\Security\User\MultitenancyUserProviderInterface;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class InMemoryMultitenacyUserProvider implements MultitenacyUserProviderInterface
+class InMemoryMultitenancyUserProvider implements MultitenancyUserProviderInterface
 {
     private $tenants = [
         ['1', 'tenant1'],
@@ -31,7 +31,7 @@ class InMemoryMultitenacyUserProvider implements MultitenacyUserProviderInterfac
      * @param string $tenant The tenant
      * @param string $username The username
      *
-     * @return MultitenacyUserInterface
+     * @return MultitenancyUserInterface
      *
      * @throws TenantNotFoundException if the tenant is not found
      * @throws UsernameNotFoundException if the user is not found

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "df89fc77418b3cbae637e2e4a221f543",
-    "content-hash": "9d8c7d5f7e2b23f7bd4166a2b2619c0a",
+    "hash": "0a787a15d1e9b19da4c6aeeb26600cf2",
+    "content-hash": "2ca084242c75ab97156aa6a17a1d7783",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1040,12 +1040,12 @@
             "time": "2012-12-21 11:40:51"
         },
         {
-            "name": "santakadev/multitenacy-bundle",
+            "name": "santakadev/multitenancy-auth-bundle",
             "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "../STKMultitenancyAuthBundle",
-                "reference": "890dda48cea228e34b50aec6db71bf6032aec6e3",
+                "reference": "522bf2c4816f1c72cab55cdb9cdef05e9d9ace66",
                 "shasum": null
             },
             "require": {
@@ -1060,7 +1060,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "STK\\MultitenacyBundle\\": ""
+                    "STK\\MultitenancyAuthBundle\\": ""
                 }
             },
             "license": [
@@ -1072,7 +1072,7 @@
                     "email": "santaka87@gmail.com"
                 }
             ],
-            "description": "Authentication provider for multitenacy",
+            "description": "Authentication provider for multitenancy",
             "transport-options": {
                 "symlink": true
             }
@@ -1993,7 +1993,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "santakadev/multitenacy-bundle": 20
+        "santakadev/multitenancy-auth-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
