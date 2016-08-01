@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class SecurityController extends Controller
@@ -31,5 +32,25 @@ class SecurityController extends Controller
                 'error'         => $error,
             )
         );
+    }
+
+    /**
+     * @Route("/jwt-login", name="jwt_login")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function jwtLoginAction(Request $request)
+    {
+        $tenant = $request->get('tenant');
+        $username = $request->get('username');
+        $password = $request->get('username');
+
+        $token = $this->get('lexik_jwt_authentication.jwt_encoder')
+            ->encode([
+                'tenant' => $tenant,
+                'username' => $username
+            ]);
+
+        return new JsonResponse(['token' => $token]);
     }
 }

@@ -1,3 +1,7 @@
 services:
     app.in_memory_multitenancy_user_provider:
         class: AppBundle\Security\User\InMemoryMultitenancyUserProvider
+
+    app.jwt_token_authenticator:
+        class: AppBundle\Security\JwtAuthenticator
+        autowire: true

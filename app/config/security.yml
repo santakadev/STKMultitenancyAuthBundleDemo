@@ -23,6 +23,9 @@ security:
                 path:   /logout
                 target: /test
             provider: multitenancy_user
+            guard:
+                authenticators:
+                    - app.jwt_token_authenticator
             anonymous: ~
 
         main:
@@ -37,4 +40,5 @@ security:
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/jwt-login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }
